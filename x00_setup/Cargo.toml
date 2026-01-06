@@ -1,0 +1,19 @@
+[package]
+name = "x00_setup"
+version = "0.0.0"
+edition = "2024"
+
+[lib]
+crate-lib = [
+  "rlib", "cdylib"
+]
+name = "x00_setup"
+path = "src/main/rs/x00_setup/lib.rs"
+
+[[bin]]
+name = "x00_setup"
+path = "src/main/rs/x00_setup/main.rs"
+
+[[test]]
+name = "x00_setup_test"
+path = "src/test/rs/x00_setup/lib.rs"
