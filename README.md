@@ -7,5 +7,5 @@
 
 ## Cargo project structure hierarchy
 ```bash
-workspace ---> package ---> crate ---> module
+[workspace] ---> package ---> crate ---> module
 ```
