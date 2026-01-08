@@ -3,3 +3,6 @@ resolver = "3"
 members = [
   "x00_setup"
 ]
+
+[workspace.package]
+license = "GPL-3.0-only OR AGPL-3.0-only"
