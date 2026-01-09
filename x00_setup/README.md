@@ -39,6 +39,12 @@ x00_setup/ #REM: package
 |         \--- resources/
 |--- target/
 ```
+## Feature
++ [x] Customize project/folder layout
++ [x] Hello world (Hi there) program
+
+## Requirement
++ &#128279;[rustup](https://rust-lang.org/tools/install)
 
 ## Installation
 ```bash
