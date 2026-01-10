@@ -17,7 +17,7 @@ A personal journal exploring Rust, the project contain a beginner journey.
 
 ## Feature
 + [x] &#128279;[x00_setup](./x00_setup/)*
-+ [ ] [x00_data_type_handling]()
++ [ ] [x01_data_type_handling]()
 
 ## Requirement
 + &#128279;[rustup](https://rust-lang.org/tools/install/)

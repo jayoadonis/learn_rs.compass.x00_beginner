@@ -1,7 +1,8 @@
 [workspace]
 resolver = "3"
 members = [
-  "x00_setup"
+  "x00_setup",
+  "x01_data_type_handling"
 ]
 
 [workspace.package]

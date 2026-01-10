@@ -1,0 +1,9 @@
+[package]
+name = "x01_data_type_handling"
+version = "0.0.0"
+edition = "2024"
+license = "GPL-3.0-only OR AGPL-3.0-only"
+
+[[bin]]
+name = "x01_data_type_handling"
+path = "src/main/rs/x01_data_type_handling/main.rs"
