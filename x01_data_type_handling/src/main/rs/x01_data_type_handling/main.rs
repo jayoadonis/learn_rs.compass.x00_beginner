@@ -1,6 +1,8 @@
 #![allow(dead_code, unused_imports, unused_variables, unused_parens)]
 #![deny(clippy::shadow_reuse, clippy::shadow_same, clippy::shadow_unrelated)]
 
+use std::ops::Deref;
+
 fn main() {
   //REM: BEGIN; Scalar data type (primitive data type)
   {
@@ -42,11 +44,52 @@ fn main() {
   } //REM: END; Scalar data type
 
   //REM: BEGIN; Compound data type
-  {} //REM: END; Compound data type
+  {
+    let tuple: (i8,f32,&str,String) 
+      = (1,2.0,"Three","FOUR".to_string());
+    let (i, ii, iii, iv) = tuple;
 
-  //REM: BEGIN; Constant
-  {} //REM: END; Constant
+    let array_i8: [i8;4] = [1,2,3,4];
+    let i8: i8 = array_i8[3]; //REM: 4
+
+    let array_str: [&str;4] = ["1","2","3","4"];
+    let array_str_i: [&str;_] = ["1","2","3","4"];
+    let array_str_ii: [&str;_] = ["0";4]; //REM: ["0","0","0","0"]
+    let array_str_iii: &[&str] = &array_str_i[2..=3]; //REM: ["3","4"]
+
+  } //REM: END; Compound data type
+
+  //REM: BEGIN; Constant and Static
+  {
+    const CONSTANT_X: i8 = 10;
+
+    static STATIC_Y: &str = "YYY";
+    
+    static mut STATIC_Z: f32 = 26.0;
+    unsafe {
+      STATIC_Z = 0.0;
+    }
+  } //REM: END; Constant
 
   //REM: BEGIN; Basic String handling
-  {} //REM: END; Basic String handling
+  {
+    let mut string_y: String = "string_y".to_string();
+    let string_y_i: String = "string_y_i".to_owned();
+    let string_y_ii: String = String::from("string_y_ii");
+
+    let str_x: &str = "str_x";
+    let str_x_i: &str = string_y.as_str();
+    let str_x_ii: &mut str = string_y.as_mut_str();
+    let str_x_iii: &str = &str_x[..]; //REM: 'str_x'
+    let str_x_iv: &str = &str_x[..=2]; //REM: 'str'
+    let str_x_v: &str = &str_x[3..]; //REM: '_x'
+
+    unsafe {
+      let str_x_vi: &mut [u8] = str_x_ii.as_bytes_mut();
+      str_x_vi[0] = b'S';
+    
+      let str_x_vii: *mut u8 = string_y.as_mut_ptr();
+      str_x_vii.add(1).write(b'T');
+    }
+  } //REM: END; Basic String handling
 }
