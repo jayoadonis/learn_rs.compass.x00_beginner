@@ -1,8 +1,6 @@
 #![allow(dead_code, unused_imports, unused_variables, unused_parens)]
 #![deny(clippy::shadow_reuse, clippy::shadow_same, clippy::shadow_unrelated)]
 
-use std::ops::Deref;
-
 fn main() {
   //REM: BEGIN; Scalar data type (primitive data type)
   {
